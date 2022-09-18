@@ -1,0 +1,10 @@
+HOMEWORK: JAVASCRIPT II
+1. Conceptos aprendidos en la leecion JSII:
+
+'for'
+
+'&&'
+
+'||'
+
+'!'

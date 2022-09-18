@@ -28,6 +28,13 @@ describe('obtenerMayor(x, y)', function() {
   it('should return either one if they are the same', function() {
     expect(obtenerMayor(1000, 1000)).toBe(1000);
   });
+  if (x > y){
+    return x;
+ }else if (y > x){
+    return y;
+ }else(x === y);{
+    return x || y;
+ }
 });
 
 describe('mayoriaDeEdad(edad)', function() {
@@ -38,6 +45,12 @@ describe('mayoriaDeEdad(edad)', function() {
   it('should return \'Not allowed\'if edad is less than 18', function() {
     expect(mayoriaDeEdad(7)).toBe('Not allowed');
   });
+  if (edad >= 18){
+    return 'Allowed';
+  }
+  if (edad < 18){
+    return 'Not allowed';
+  }
 });
 
 describe('conection(status)', function() {
@@ -47,7 +60,15 @@ describe('conection(status)', function() {
     expect(conection(3)).toBe('Offline');
     expect(conection()).toBe('Offline');
   });
-});
+
+  if(status === 1){
+    return 'Online';
+  }else if(status === 2) {
+    return 'Away';
+  }else{
+    return 'Offline';
+  }
+  });
 
 describe('saludo(idioma)', function() {
   it('should return \'Guten Tag!\' for aleman', function() {
@@ -63,6 +84,15 @@ describe('saludo(idioma)', function() {
     expect(saludo('frances')).toBe('Hola!');
     expect(saludo()).toBe('Hola!');
   });
+  if (idioma === 'aleman'){
+    return 'Guten Tag!';
+  }else if(idioma === 'ingles'){
+    return 'Hello!'
+  }else if(idioma === 'mandarin') {
+    return 'Ni Hao!';
+  }else{
+    return 'Hola!';
+  }
 });
 
 describe('colors(color)', function() {
@@ -76,6 +106,18 @@ describe('colors(color)', function() {
     expect(colors()).toBe('Color not found');
     expect(colors("pink")).toBe('Color not found');
   });
+  switch(colors){
+    case "blue":
+      return 'This is blue';
+    case "red":
+      return 'This is red';
+    case "green":
+      return 'This is green';
+    case "orange":
+      return 'This is orange';
+    default:
+      return 'Color not found';
+  }
 });
 
 describe('esDiezOCinco(num)', function() {
@@ -89,6 +131,11 @@ describe('esDiezOCinco(num)', function() {
     expect(esDiezOCinco(0)).toBe(false);
     expect(esDiezOCinco(5.01)).toBe(false);
   });
+  if(num === 10 || num === 5){
+    return true;
+  }else{
+    return false;
+  }
 });
 
 describe('estaEnRango(num)', function() {
@@ -104,6 +151,11 @@ describe('estaEnRango(num)', function() {
     expect(estaEnRango(50)).toBe(false);
     expect(estaEnRango(100)).toBe(false);
   });
+  if (num < 21 && num > 49){
+    return true;
+  }else{
+    return false;
+  }
 });
 
 describe('esEntero(num)', function() {
@@ -119,6 +171,11 @@ describe('esEntero(num)', function() {
   it('should return true for 0', function() {
     expect(esEntero(0)).toBe(true);
   });
+  if (num === Math.floor(num)){
+    return true;
+  }else{
+    return false;
+  }
 });
 
 describe('fizzBuzz(num)', function() {
@@ -134,6 +191,15 @@ describe('fizzBuzz(num)', function() {
   it('should return num if not divisible by 3 or 5', function() {
     expect(fizzBuzz(4)).toBe(4);
   });
+  if(num % 3 === 0 && num % 5 === 0){
+  return 'fizzbuzz';
+  }else if(num % 3 === 0){
+    return 'fizz';
+  }else if(num % 5 === 0){
+    return 'buzz';
+  }else{
+    return num;
+  } 
 });
 
 describe('operadoresLogicos(num1, num2, num3)', function() {
@@ -152,6 +218,17 @@ describe('operadoresLogicos(num1, num2, num3)', function() {
   it('should return false if none of the conditions are met', function() {
     expect(operadoresLogicos(10, 30, 6)).toBe(false);
   });
+if(num1 === 0 || num2 === 0 || num3 === 0){
+  return 'Error';
+}else if(num1 < 0 || num2 < 0 || num3 < 0){
+  return 'Hay negativos';
+}else if(num1 > 0 && num1 > num2 && num1 > num3){
+  return 'Número 1 es mayor y positivo';
+}else if(num3 > num1 && num3 > num2){
+  return 'num3 + 1';
+}else{
+  return false;
+}
 });
 
 describe('esPrimo(num)', function() {
@@ -168,6 +245,18 @@ describe('esPrimo(num)', function() {
     expect(esPrimo(0)).toBe(false);
     expect(esPrimo(1)).toBe(false);
   });
+  if(num === 2){
+    return true;
+  }else if(num < 2)
+    return false;
+  for(var i = 2; i < num; i++){
+  }if(num % i === 0){
+      return false;
+    }
+  {
+    return true
+
+  }
 });
 
 describe ('esVerdadero(valor)', function() {
@@ -177,12 +266,24 @@ describe ('esVerdadero(valor)', function() {
   it('should return Soy falso if valor is false', function() {
     expect(esVerdadero(false)).toBe("Soy falso");
   });
+  if(valor === true);{
+  return "Soy verdadero";
+}
+{
+    return "Soy falso";
+  }
 });
 
 describe ('tablaDelSeis()', function() {
   it('should return multiplication table of 6', function() {
     expect(tablaDelSeis()).toEqual([0 , 6, 12, 18, 24, 30, 36, 42, 48, 54, 60]);
   });
+  var arraytablaDelSeis = [];
+for (var i = 0;  i < 11; i++){
+  arraytablaDelSeis.push(6 * i);
+ }
+ return arraytablaDelSeis;
+
 });
 
 describe ('tieneTresDigitos(numero)', function() {
@@ -193,6 +294,11 @@ describe ('tieneTresDigitos(numero)', function() {
     expect(tieneTresDigitos(10)).toBe(false);
     expect(tieneTresDigitos(20000)).toBe(false);
   });
+  if(numero > 99 && numero < 1000){
+    return true;
+  }else{
+    return false;
+  }
 });
 
 describe('doWhile(numero)', function() {
@@ -201,4 +307,12 @@ describe('doWhile(numero)', function() {
     expect(doWhile(100)).toBe(140);
     expect(doWhile(-1)).toBe(39);
   });
+  var contador = 8;
+  var resultado = 0;
+  do{
+    resultado += 5;
+    contador -= 1;
+  }while(contador!== 0)
+
+return numero + resultado;
 });
